@@ -7,28 +7,130 @@
 //
 
 import XCTest
+import Network
 @testable import HiShadiChat
 
+fileprivate class NWConnectionMock: NWConnectionInterface {
+	private(set) var canceled = false
+	private(set) var lastMessage: String?
+	private(set) var didReceiveMessage = false
+
+	private(set) var startCount = 0
+	func cancel() {
+		canceled = true
+	}
+	
+	func receiveMessage(completion: @escaping (Data?, NWConnection.ContentContext?, Bool, NWError?) -> Void) {
+		didReceiveMessage = true
+	}
+	
+	func send(content: Data?, contentContext: NWConnection.ContentContext, isComplete: Bool, completion: NWConnection.SendCompletion) {
+		guard let data = content else { lastMessage = nil; return }
+		lastMessage = String(data: data, encoding: .unicode)
+	}
+	
+	func start(queue: DispatchQueue) {
+		startCount += 1
+	}
+	
+	var stateUpdateHandler: ((NWConnection.State) -> Void)?
+}
+
 class HiShadiChatTests: XCTestCase {
+	
+	func testCancel() {
+		let connectionMock = NWConnectionMock()
+		let peerConnection = PeerConnection(connection: connectionMock, delegate: self)
+		
+		XCTAssertNotNil(peerConnection.connection)
+		
+		XCTAssertFalse(connectionMock.canceled)
+		peerConnection.cancel()
+		XCTAssert(connectionMock.canceled)
+		
+		XCTAssertNil(peerConnection.connection)
+	}
+	
+	func testNilConnectionCancel() {
+		let connectionMock = NWConnectionMock()
+		let peerConnection = PeerConnection(connection: connectionMock, delegate: self)
+		XCTAssertNotNil(peerConnection.connection)
+		peerConnection.connection = nil
+		XCTAssertNil(peerConnection.connection)
+		peerConnection.cancel()
+		XCTAssertFalse(connectionMock.canceled)
+	}
+	
+	func testStart() {
+		let connectionMock = NWConnectionMock()
+		let peerConnection = PeerConnection(connection: connectionMock, delegate: self)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+		let initialCount = connectionMock.startCount
+		peerConnection.startConnection()
+		XCTAssertEqual(initialCount, connectionMock.startCount - 1)
+	}
+	
+	func testNilStartConnection(){
+		let connectionMock = NWConnectionMock()
+		let peerConnection = PeerConnection(connection: connectionMock, delegate: self)
+		
+		XCTAssertNotNil(peerConnection.connection)
+		peerConnection.connection = nil
+		XCTAssertNil(peerConnection.connection)
+		
+		let initialCount = connectionMock.startCount
+		peerConnection.startConnection()
+		XCTAssertEqual(initialCount, connectionMock.startCount)
+	}
+	
+	let testingMessages = ["Hello", "😍", "سلام"]
+	func testMessage() {
+		let connectionMock = NWConnectionMock()
+		let peerConnection = PeerConnection(connection: connectionMock, delegate: self)
+		
+		for message in testingMessages {
+			peerConnection.sendMessage(message)
+			XCTAssertEqual(connectionMock.lastMessage, message)
+		}
+	}
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+	func testRecieveNextMessage() {
+		let connectionMock = NWConnectionMock()
+		let peerConnection = PeerConnection(connection: connectionMock, delegate: self)
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+		XCTAssertFalse(connectionMock.didReceiveMessage)
+		peerConnection.receiveNextMessage()
+		XCTAssert(connectionMock.didReceiveMessage)
+	}
+	
+	func testNilConnectionRecieveNextMessage() {
+		let connectionMock = NWConnectionMock()
+		let peerConnection = PeerConnection(connection: connectionMock, delegate: self)
+		XCTAssertNotNil(peerConnection.connection)
+		peerConnection.connection = nil
+		XCTAssertNil(peerConnection.connection)
+		
+		peerConnection.receiveNextMessage()
+		XCTAssertFalse(connectionMock.didReceiveMessage)
+	}
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+extension HiShadiChatTests: PeerConnectionDelegate {
+	func connectionReady() {
+			
+	}
+	
+	func connectionFailed() {
+		
+	}
+	
+	func receivedMessage(content: Data?) {
 
+	}
+	
+	func displayAdvertiseError(_ error: NWError) {
+		
+	}
+	
+			
 }

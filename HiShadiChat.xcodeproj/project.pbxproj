@@ -14,7 +14,6 @@
 		F31FC39D250F4E3D0038BE32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31FC39C250F4E3D0038BE32 /* Assets.xcassets */; };
 		F31FC3A0250F4E3D0038BE32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31FC39E250F4E3D0038BE32 /* LaunchScreen.storyboard */; };
 		F31FC3AB250F4E3D0038BE32 /* HiShadiChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3AA250F4E3D0038BE32 /* HiShadiChatTests.swift */; };
-		F31FC3B6250F4E3D0038BE32 /* HiShadiChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3B5250F4E3D0038BE32 /* HiShadiChatUITests.swift */; };
 		F31FC3C9250F4F4D0038BE32 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3C4250F4F4D0038BE32 /* PeerConnection.swift */; };
 		F31FC3CA250F4F4D0038BE32 /* PeerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3C5250F4F4D0038BE32 /* PeerListener.swift */; };
 		F31FC3CC250F4F4D0038BE32 /* NWParameters+InitWithPasscode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3C7250F4F4D0038BE32 /* NWParameters+InitWithPasscode.swift */; };
@@ -26,13 +25,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		F31FC3A7250F4E3D0038BE32 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F31FC388250F4E390038BE32 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F31FC38F250F4E390038BE32;
-			remoteInfo = HiShadiChat;
-		};
-		F31FC3B2250F4E3D0038BE32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F31FC388250F4E390038BE32 /* Project object */;
 			proxyType = 1;
@@ -53,9 +45,6 @@
 		F31FC3A6250F4E3D0038BE32 /* HiShadiChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiShadiChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31FC3AA250F4E3D0038BE32 /* HiShadiChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiShadiChatTests.swift; sourceTree = "<group>"; };
 		F31FC3AC250F4E3D0038BE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F31FC3B1250F4E3D0038BE32 /* HiShadiChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiShadiChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F31FC3B5250F4E3D0038BE32 /* HiShadiChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiShadiChatUITests.swift; sourceTree = "<group>"; };
-		F31FC3B7250F4E3D0038BE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F31FC3C4250F4F4D0038BE32 /* PeerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
 		F31FC3C5250F4F4D0038BE32 /* PeerListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerListener.swift; sourceTree = "<group>"; };
 		F31FC3C7250F4F4D0038BE32 /* NWParameters+InitWithPasscode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NWParameters+InitWithPasscode.swift"; sourceTree = "<group>"; };
@@ -80,13 +69,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F31FC3AE250F4E3D0038BE32 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,7 +77,6 @@
 			children = (
 				F31FC392250F4E390038BE32 /* HiShadiChat */,
 				F31FC3A9250F4E3D0038BE32 /* HiShadiChatTests */,
-				F31FC3B4250F4E3D0038BE32 /* HiShadiChatUITests */,
 				F31FC391250F4E390038BE32 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,7 +86,6 @@
 			children = (
 				F31FC390250F4E390038BE32 /* HiShadiChat.app */,
 				F31FC3A6250F4E3D0038BE32 /* HiShadiChatTests.xctest */,
-				F31FC3B1250F4E3D0038BE32 /* HiShadiChatUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,15 +114,6 @@
 				F31FC3AC250F4E3D0038BE32 /* Info.plist */,
 			);
 			path = HiShadiChatTests;
-			sourceTree = "<group>";
-		};
-		F31FC3B4250F4E3D0038BE32 /* HiShadiChatUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F31FC3B5250F4E3D0038BE32 /* HiShadiChatUITests.swift */,
-				F31FC3B7250F4E3D0038BE32 /* Info.plist */,
-			);
-			path = HiShadiChatUITests;
 			sourceTree = "<group>";
 		};
 		F31FC3C3250F4F4D0038BE32 /* Networking */ = {
@@ -195,24 +166,6 @@
 			productReference = F31FC3A6250F4E3D0038BE32 /* HiShadiChatTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F31FC3B0250F4E3D0038BE32 /* HiShadiChatUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F31FC3C0250F4E3D0038BE32 /* Build configuration list for PBXNativeTarget "HiShadiChatUITests" */;
-			buildPhases = (
-				F31FC3AD250F4E3D0038BE32 /* Sources */,
-				F31FC3AE250F4E3D0038BE32 /* Frameworks */,
-				F31FC3AF250F4E3D0038BE32 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F31FC3B3250F4E3D0038BE32 /* PBXTargetDependency */,
-			);
-			name = HiShadiChatUITests;
-			productName = HiShadiChatUITests;
-			productReference = F31FC3B1250F4E3D0038BE32 /* HiShadiChatUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -227,10 +180,6 @@
 						CreatedOnToolsVersion = 11.4;
 					};
 					F31FC3A5250F4E3D0038BE32 = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = F31FC38F250F4E390038BE32;
-					};
-					F31FC3B0250F4E3D0038BE32 = {
 						CreatedOnToolsVersion = 11.4;
 						TestTargetID = F31FC38F250F4E390038BE32;
 					};
@@ -251,7 +200,6 @@
 			targets = (
 				F31FC38F250F4E390038BE32 /* HiShadiChat */,
 				F31FC3A5250F4E3D0038BE32 /* HiShadiChatTests */,
-				F31FC3B0250F4E3D0038BE32 /* HiShadiChatUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -268,13 +216,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F31FC3A4250F4E3D0038BE32 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F31FC3AF250F4E3D0038BE32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,14 +250,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F31FC3AD250F4E3D0038BE32 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F31FC3B6250F4E3D0038BE32 /* HiShadiChatUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -324,11 +257,6 @@
 			isa = PBXTargetDependency;
 			target = F31FC38F250F4E390038BE32 /* HiShadiChat */;
 			targetProxy = F31FC3A7250F4E3D0038BE32 /* PBXContainerItemProxy */;
-		};
-		F31FC3B3250F4E3D0038BE32 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F31FC38F250F4E390038BE32 /* HiShadiChat */;
-			targetProxy = F31FC3B2250F4E3D0038BE32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -546,46 +474,6 @@
 			};
 			name = Release;
 		};
-		F31FC3C1250F4E3D0038BE32 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A26R4SND6W;
-				INFOPLIST_FILE = HiShadiChatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shadiGhelman.HiShadiChatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HiShadiChat;
-			};
-			name = Debug;
-		};
-		F31FC3C2250F4E3D0038BE32 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A26R4SND6W;
-				INFOPLIST_FILE = HiShadiChatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shadiGhelman.HiShadiChatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HiShadiChat;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -612,15 +500,6 @@
 			buildConfigurations = (
 				F31FC3BE250F4E3D0038BE32 /* Debug */,
 				F31FC3BF250F4E3D0038BE32 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F31FC3C0250F4E3D0038BE32 /* Build configuration list for PBXNativeTarget "HiShadiChatUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F31FC3C1250F4E3D0038BE32 /* Debug */,
-				F31FC3C2250F4E3D0038BE32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
