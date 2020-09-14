@@ -95,9 +95,9 @@ class PeerConnection {
 		}
 
 		// Create a message object to hold the command type.
-		let message = NWProtocolFramer.Message(gameMessageType: .selectedCharacter)
+//		let message = NWProtocolFramer.Message(gameMessageType: .selectedCharacter)
 		let context = NWConnection.ContentContext(identifier: "SelectCharacter",
-												  metadata: [message])
+												  metadata: [])
 
 		// Send the application content along with the message.
 		connection.send(content: character.data(using: .unicode), contentContext: context, isComplete: true, completion: .idempotent)

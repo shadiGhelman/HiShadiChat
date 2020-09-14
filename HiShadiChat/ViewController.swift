@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var nameTextField: UITextField!
 	
+	@IBOutlet weak var searchIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var passcodeLabel: UILabel!
 	var results: [NWBrowser.Result] = [NWBrowser.Result]()
 	var sections: [ChatFinderSection] = [.host, .join]
@@ -35,17 +36,20 @@ class ViewController: UIViewController {
 	var passcode : String?
 	
 	@IBAction func hostNameButtonDidTouch(_ sender: Any) {
+		
 		hostChatButton()
 	}
 	
 	@IBAction func searchButtonDidTouch(_ sender: Any) {
+		searchIndicator.alpha = 1
+		searchIndicator.startAnimating()
 		if sharedBrowser == nil {
 			sharedBrowser = PeerBrowser(delegate: self)
 		}
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		searchIndicator.alpha = 0
 		passcode = generatePasscode()
 		passcodeLabel.text = passcode!
 	}
@@ -120,6 +124,8 @@ extension ViewController: PeerBrowserDelegate {
 				}
 			}
 		}
+		searchIndicator.alpha = 0
+		searchIndicator.stopAnimating()
 		tableView.reloadData()
 	}
 

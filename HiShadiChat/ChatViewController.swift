@@ -26,6 +26,7 @@ class ChatViewController: UIViewController {
 	@IBAction func sendButtonDidTouch(_ sender: Any) {
 		// send message after button Touched
 		sharedConnection?.sendMessage(messageTextField.text!)
+		messageTextField.text = ""
 	}
 	
     
