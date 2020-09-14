@@ -15,6 +15,13 @@
 		F31FC3A0250F4E3D0038BE32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31FC39E250F4E3D0038BE32 /* LaunchScreen.storyboard */; };
 		F31FC3AB250F4E3D0038BE32 /* HiShadiChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3AA250F4E3D0038BE32 /* HiShadiChatTests.swift */; };
 		F31FC3B6250F4E3D0038BE32 /* HiShadiChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3B5250F4E3D0038BE32 /* HiShadiChatUITests.swift */; };
+		F31FC3C9250F4F4D0038BE32 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3C4250F4F4D0038BE32 /* PeerConnection.swift */; };
+		F31FC3CA250F4F4D0038BE32 /* PeerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3C5250F4F4D0038BE32 /* PeerListener.swift */; };
+		F31FC3CB250F4F4D0038BE32 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3C6250F4F4D0038BE32 /* GameProtocol.swift */; };
+		F31FC3CC250F4F4D0038BE32 /* NWParameters+InitWithPasscode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3C7250F4F4D0038BE32 /* NWParameters+InitWithPasscode.swift */; };
+		F31FC3CD250F4F4D0038BE32 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3C8250F4F4D0038BE32 /* PeerBrowser.swift */; };
+		F31FC3CF250F5C2D0038BE32 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3CE250F5C2D0038BE32 /* PasscodeViewController.swift */; };
+		F31FC3D1250F66000038BE32 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31FC3D0250F66000038BE32 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		F31FC3B1250F4E3D0038BE32 /* HiShadiChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiShadiChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31FC3B5250F4E3D0038BE32 /* HiShadiChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiShadiChatUITests.swift; sourceTree = "<group>"; };
 		F31FC3B7250F4E3D0038BE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F31FC3C4250F4F4D0038BE32 /* PeerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
+		F31FC3C5250F4F4D0038BE32 /* PeerListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerListener.swift; sourceTree = "<group>"; };
+		F31FC3C6250F4F4D0038BE32 /* GameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		F31FC3C7250F4F4D0038BE32 /* NWParameters+InitWithPasscode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NWParameters+InitWithPasscode.swift"; sourceTree = "<group>"; };
+		F31FC3C8250F4F4D0038BE32 /* PeerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
+		F31FC3CE250F5C2D0038BE32 /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		F31FC3D0250F66000038BE32 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +113,13 @@
 		F31FC392250F4E390038BE32 /* HiShadiChat */ = {
 			isa = PBXGroup;
 			children = (
+				F31FC3C3250F4F4D0038BE32 /* Networking */,
 				F31FC393250F4E390038BE32 /* AppDelegate.swift */,
 				F31FC395250F4E390038BE32 /* SceneDelegate.swift */,
 				F31FC397250F4E390038BE32 /* ViewController.swift */,
 				F31FC399250F4E390038BE32 /* Main.storyboard */,
+				F31FC3D0250F66000038BE32 /* ChatViewController.swift */,
+				F31FC3CE250F5C2D0038BE32 /* PasscodeViewController.swift */,
 				F31FC39C250F4E3D0038BE32 /* Assets.xcassets */,
 				F31FC39E250F4E3D0038BE32 /* LaunchScreen.storyboard */,
 				F31FC3A1250F4E3D0038BE32 /* Info.plist */,
@@ -126,6 +143,18 @@
 				F31FC3B7250F4E3D0038BE32 /* Info.plist */,
 			);
 			path = HiShadiChatUITests;
+			sourceTree = "<group>";
+		};
+		F31FC3C3250F4F4D0038BE32 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F31FC3C4250F4F4D0038BE32 /* PeerConnection.swift */,
+				F31FC3C5250F4F4D0038BE32 /* PeerListener.swift */,
+				F31FC3C6250F4F4D0038BE32 /* GameProtocol.swift */,
+				F31FC3C7250F4F4D0038BE32 /* NWParameters+InitWithPasscode.swift */,
+				F31FC3C8250F4F4D0038BE32 /* PeerBrowser.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +291,13 @@
 				F31FC398250F4E390038BE32 /* ViewController.swift in Sources */,
 				F31FC394250F4E390038BE32 /* AppDelegate.swift in Sources */,
 				F31FC396250F4E390038BE32 /* SceneDelegate.swift in Sources */,
+				F31FC3CC250F4F4D0038BE32 /* NWParameters+InitWithPasscode.swift in Sources */,
+				F31FC3CF250F5C2D0038BE32 /* PasscodeViewController.swift in Sources */,
+				F31FC3CD250F4F4D0038BE32 /* PeerBrowser.swift in Sources */,
+				F31FC3CA250F4F4D0038BE32 /* PeerListener.swift in Sources */,
+				F31FC3C9250F4F4D0038BE32 /* PeerConnection.swift in Sources */,
+				F31FC3D1250F66000038BE32 /* ChatViewController.swift in Sources */,
+				F31FC3CB250F4F4D0038BE32 /* GameProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
